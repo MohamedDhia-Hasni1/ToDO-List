@@ -1,0 +1,220 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.to-do-list {
+  max-width: 600px;
+  width: 90%;
+  margin: 20px;
+  padding: 30px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.to-do-list h1 {
+  text-align: center;
+  color: white;
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.8s ease-in;
+}
+
+.add{
+  margin-bottom: 10px;
+}
+
+input[type="text"]{
+  padding: 10px;
+
+
+}
+
+.input-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  animation: slideUp 0.6s ease-out;
+}
+
+.input-section input {
+  flex: 1;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.input-section input:focus {
+  background: white;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.add-button {
+  padding: 15px 30px;
+  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+  transition: all 0.3s ease;
+  margin-left: 10px;
+}
+
+.add-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
+  background: linear-gradient(45deg, #ff5252, #ff3838);
+}
+
+.add-button:active {
+  transform: translateY(-1px);
+}
+
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  background: white;
+  margin-bottom: 15px;
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.5s ease-out;
+  transition: all 0.3s ease;
+}
+
+li:hover {
+  transform: translateX(10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.text {
+  flex: 1;
+  font-size: 18px;
+  color: #333;
+  font-weight: 500;
+}
+
+.delete-button {
+  background: linear-gradient(45deg, #ff4757, #ff3838);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-left: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(255, 71, 87, 0.3);
+}
+
+.delete-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(255, 71, 87, 0.5);
+}
+
+.move-button {
+  background: linear-gradient(45deg, #3742fa, #5352ed);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-left: 5px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(55, 66, 250, 0.3);
+}
+
+.move-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(55, 66, 250, 0.5);
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+li:nth-child(1) { animation-delay: 0.1s; }
+li:nth-child(2) { animation-delay: 0.2s; }
+li:nth-child(3) { animation-delay: 0.3s; }
+li:nth-child(4) { animation-delay: 0.4s; }
+li:nth-child(5) { animation-delay: 0.5s; }
+
+
+@media (max-width: 768px) {
+  .to-do-list {
+    margin: 20px;
+    padding: 20px;
+  }
+  
+  .input-section {
+    flex-direction: column;
+  }
+  
+  li {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .button-group {
+    display: flex;
+    gap: 10px;
+  }
+}
